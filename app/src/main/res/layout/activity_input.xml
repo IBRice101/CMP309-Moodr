@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".diary.InputActivity">
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtHelloSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/how_are_you"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageButton
+        android:id="@+id/imgbtnDown"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/sad"
+        android:src="@drawable/ic_baseline_sentiment_down_24"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnOkay"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnSad"
+        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
+
+    <ImageButton
+        android:id="@+id/imgbtnSad"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/down"
+        android:src="@drawable/outline_mood_sad_24"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnDown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
+
+    <ImageButton
+        android:id="@+id/imgbtnHappy"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/okay"
+        android:src="@drawable/ic_baseline_sentiment_happy_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnGood"
+        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
+
+    <ImageButton
+        android:id="@+id/imgbtnGood"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/good"
+        android:src="@drawable/ic_baseline_sentiment_good_24"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnHappy"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnOkay"
+        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
+
+    <ImageButton
+        android:id="@+id/imgbtnOkay"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/happy"
+        android:src="@drawable/outline_sentiment_okay_24"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnGood"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnDown"
+        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
+
+    <EditText
+        android:id="@+id/edittxtDiary"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:gravity="top|start"
+        android:importantForAutofill="no"
+        android:inputType="textLongMessage|textMultiLine|text"
+        android:singleLine="false"
+        android:hint="@string/thoughts_from_the_day"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnDown"
+        tools:ignore="LabelFor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

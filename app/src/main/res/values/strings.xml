@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Moodr</string>
+    <string name="diary">Diary</string>
+    <string name="habits">Habits</string>
+    <string name="threegoodthings">ThreeGoodThings</string>
+    <string name="test_123">Test 123</string>
+    <string name="reports">Reports</string>
+    <string name="title_activity_calendar_fragment">CalendarFragment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="a_button_to_add_content_to_today_s_date">A button to add content to today\'s date</string>
+    <string name="today_s_date">[TODAY\'S DATE]</string>
+    <string name="submit">Submit</string>
+    <string name="how_are_you">How are you?</string>
+    <string name="sad">Sad</string>
+    <string name="down">Down</string>
+    <string name="okay">Okay</string>
+    <string name="good">Good</string>
+    <string name="happy">Happy</string>
+    <string name="thoughts_from_the_day">Thoughts from the day</string>
+    <string name="click_above">Click on one of the buttons above to see some information about how you\'ve been feeling over the last weeks and months!</string>
+    <string name="past_7_days">Past 7 days</string>
+    <string name="past_30_days">Past 30 days</string>
+    <string name="past_year">Past Year</string>
+    <string name="day_number">[DAY NUMBER]</string>
+    <string name="first_good_thing_about_today">First good thing about today</string>
+    <string name="second_good_thing_about_today">Second good thing about today</string>
+    <string name="third_good_thing_about_today">Third good thing about today</string>
+</resources>

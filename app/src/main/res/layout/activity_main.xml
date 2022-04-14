@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mainscreen.MainActivity">
+
+
+    <Button
+        android:id="@+id/diary"
+        android:layout_width="200dp"
+        android:layout_height="64dp"
+        android:text="@string/diary"
+        app:layout_constraintBottom_toTopOf="@+id/habits"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Diary" />
+
+    <Button
+        android:id="@+id/habits"
+        android:layout_width="200dp"
+        android:layout_height="64dp"
+        android:text="@string/habits"
+        app:layout_constraintBottom_toTopOf="@+id/threegoodthings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diary"
+        tools:text="Habits" />
+
+    <Button
+        android:id="@+id/threegoodthings"
+        android:layout_width="200dp"
+        android:layout_height="64dp"
+        android:text="@string/threegoodthings"
+        app:layout_constraintBottom_toTopOf="@+id/quoteView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/habits"
+        tools:text="Three Good Things" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="64dp"
+        android:text="@string/reports"
+        app:layout_constraintBottom_toTopOf="@+id/quoteView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/threegoodthings"
+        tools:text="Reports" />
+
+
+    <TextView
+        android:id="@+id/quoteView"
+        android:layout_width="350dp"
+        android:layout_height="87dp"
+        android:gravity="center"
+        android:text="@string/test_123"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/threegoodthings" />
+
+    <!-- Settings, should always be in the overflow -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

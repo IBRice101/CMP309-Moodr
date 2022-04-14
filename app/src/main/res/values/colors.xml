@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- NOTE: do not reference colours here directly, instead use ?attr/colourNameHere,
+    this is to preserve dark/light themes -->
+
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- light theme -->
+    <color name="LightPrimary">#d32f2f</color>
+    <color name="LightPrimaryVariant">#ff6659</color>
+    <color name="LightSecondary">#ffc107</color>
+    <color name="LightSecondaryVariant">#fff350</color>
+
+    <color name="feelingSadLight">#B71C1C</color>
+    <color name="feelingDownLight">#D84315</color>
+    <color name="feelingOkayLight">#F57C00</color>
+    <color name="feelingGoodLight">#FFB300</color>
+    <color name="feelingHappyLight">#FDD835</color>
+
+    <!-- dark theme -->
+    <color name="DarkPrimary">#673ab7</color>
+    <color name="DarkPrimaryVariant">#320b86</color>
+    <color name="DarkSecondary">#26a69a</color>
+    <color name="DarkSecondaryVariant">#00766c</color>
+
+    <color name="feelingSadDark">#5E35B1</color>
+    <color name="feelingDownDark">#5C6BC0</color>
+    <color name="feelingOkayDark">#2196F3</color>
+    <color name="feelingGoodDark">#8BC34A</color>
+    <color name="feelingHappyDark">#4CAF50</color>
+</resources>
