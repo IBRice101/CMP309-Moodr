@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.ibrice.moodr.R;
 import com.ibrice.moodr.diary.CalendarActivity;
@@ -19,32 +20,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // set on click listeners for navigation buttons
+        Button btnDiary = findViewById(R.id.btnDiary);
+        btnDiary.setOnClickListener(v -> {
+            Intent diaryIntent = new Intent(this, CalendarActivity.class);
+            diaryIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP); // will not run if already at the top
+            startActivity(diaryIntent);
+        });
+
+        Button btnHabits = findViewById(R.id.btnHabits);
+        btnHabits.setOnClickListener(v -> {
+            Intent habitsIntent = new Intent(this, HabitsActivity.class);
+            habitsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(habitsIntent);
+        });
+
+        Button btnThreegoodthings = findViewById(R.id.btnThreegoodthings);
+        btnThreegoodthings.setOnClickListener(v -> {
+            Intent threegoodthingsIntent = new Intent(this, ThreeGoodThingsActivity.class);
+            threegoodthingsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(threegoodthingsIntent);
+        });
+
+        Button btnReports = findViewById(R.id.btnReports);
+        btnReports.setOnClickListener(v -> {
+            Intent reportsIntent = new Intent(this, ReportsActivity.class);
+            reportsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(reportsIntent);
+        });
+
     }
 
     // functions that respond to onclick events for relevant buttons
-    public void openDiary(View view) {
-        Intent diaryIntent = new Intent(this, CalendarActivity.class);
-        diaryIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP); // will not run if already at the top
-        startActivity(diaryIntent);
-    }
-
-    public void openHabits(View view) {
-        Intent habitsIntent = new Intent(this, HabitsActivity.class);
-        habitsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(habitsIntent);
-    }
-
-    public void openThreeGoodThings(View view) {
-        Intent threegoodthingsIntent = new Intent(this, ThreeGoodThingsActivity.class);
-        threegoodthingsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(threegoodthingsIntent);
-    }
-
-    public void openReports(View view) {
-        Intent reportsIntent = new Intent(this, ReportsActivity.class);
-        reportsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(reportsIntent);
-    }
 
     public void openSettings(View view) {
         Intent settingsIntent = new Intent(this, SettingsActivity.class);

@@ -32,4 +32,5 @@
     <string name="first_good_thing_about_today">First good thing about today</string>
     <string name="second_good_thing_about_today">Second good thing about today</string>
     <string name="third_good_thing_about_today">Third good thing about today</string>
+    <string name="settings">Settings</string>
 </resources>

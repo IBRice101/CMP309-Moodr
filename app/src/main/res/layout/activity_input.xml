@@ -32,18 +32,6 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <ImageButton
-        android:id="@+id/imgbtnDown"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="64dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/sad"
-        android:src="@drawable/ic_baseline_sentiment_down_24"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtnOkay"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnSad"
-        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
-
-    <ImageButton
         android:id="@+id/imgbtnSad"
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="75dp"
@@ -58,16 +46,28 @@
         app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
 
     <ImageButton
-        android:id="@+id/imgbtnHappy"
+        android:id="@+id/imgbtnDown"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="64dp"
         android:background="@android:color/transparent"
-        android:contentDescription="@string/okay"
-        android:src="@drawable/ic_baseline_sentiment_happy_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnGood"
+        android:contentDescription="@string/sad"
+        android:src="@drawable/ic_baseline_sentiment_down_24"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnOkay"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnSad"
+        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
+
+    <ImageButton
+        android:id="@+id/imgbtnOkay"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/happy"
+        android:src="@drawable/outline_sentiment_okay_24"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnGood"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnDown"
+
         app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
 
     <ImageButton
@@ -83,15 +83,16 @@
         app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
 
     <ImageButton
-        android:id="@+id/imgbtnOkay"
+        android:id="@+id/imgbtnHappy"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="64dp"
         android:background="@android:color/transparent"
-        android:contentDescription="@string/happy"
-        android:src="@drawable/outline_sentiment_okay_24"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtnGood"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnDown"
+        android:contentDescription="@string/okay"
+        android:src="@drawable/ic_baseline_sentiment_happy_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnGood"
         app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
 
     <EditText
