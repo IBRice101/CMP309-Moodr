@@ -16,15 +16,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Diary" />
+        tools:text="Diary"
+        android:onClick="openDiary"/>
 
     <Button
         android:id="@+id/habits"
         android:layout_width="200dp"
         android:layout_height="64dp"
+        android:onClick="openHabits"
         android:text="@string/habits"
         app:layout_constraintBottom_toTopOf="@+id/threegoodthings"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/diary"
         tools:text="Habits" />
@@ -34,13 +37,15 @@
         android:layout_width="200dp"
         android:layout_height="64dp"
         android:text="@string/threegoodthings"
-        app:layout_constraintBottom_toTopOf="@+id/quoteView"
+        app:layout_constraintBottom_toTopOf="@+id/reports"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/habits"
-        tools:text="Three Good Things" />
+        tools:text="Three Good Things"
+        android:onClick="openThreeGoodThings"/>
 
     <Button
+        android:id="@+id/reports"
         android:layout_width="200dp"
         android:layout_height="64dp"
         android:text="@string/reports"
@@ -49,7 +54,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/threegoodthings"
-        tools:text="Reports" />
+        tools:text="Reports"
+        android:onClick="openReports"/>
 
 
     <TextView
