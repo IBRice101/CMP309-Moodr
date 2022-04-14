@@ -68,7 +68,8 @@
         app:layout_constraintEnd_toStartOf="@+id/imgbtnGood"
         app:layout_constraintStart_toEndOf="@+id/imgbtnDown"
 
-        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
+        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/imgbtnGood"
@@ -80,7 +81,8 @@
         android:src="@drawable/ic_baseline_sentiment_good_24"
         app:layout_constraintEnd_toStartOf="@+id/imgbtnHappy"
         app:layout_constraintStart_toEndOf="@+id/imgbtnOkay"
-        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
+        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/imgbtnHappy"
@@ -93,13 +95,14 @@
         android:src="@drawable/ic_baseline_sentiment_happy_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgbtnGood"
-        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond" />
+        app:layout_constraintTop_toBottomOf="@+id/txtHelloSecond"
+        tools:ignore="ImageContrastCheck" />
+
 
     <EditText
-        android:id="@+id/edittxtDiary"
-        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:id="@+id/edittxtTitle"
         android:layout_width="350dp"
-        android:layout_height="300dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="64dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
@@ -107,15 +110,44 @@
         android:background="#FFFFFF"
         android:ems="10"
         android:gravity="top|start"
+        android:hint="@string/give_your_entry_a_title"
         android:importantForAutofill="no"
         android:inputType="textLongMessage|textMultiLine|text"
         android:singleLine="false"
-        android:hint="@string/thoughts_from_the_day"
         android:textColor="@color/black"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgbtnDown"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:id="@+id/edittxtDiary"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:gravity="top|start"
+        android:hint="@string/thoughts_from_the_day"
+        android:importantForAutofill="no"
+        android:inputType="textLongMessage|textMultiLine|text"
+        android:singleLine="false"
+        android:textColor="@color/black"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnDown"
+        app:layout_constraintVertical_bias="0.89"
         tools:ignore="LabelFor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.ibrice.moodr.diary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,57 +10,75 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.ibrice.moodr.R;
+import com.ibrice.moodr.database.DBManager;
+import com.ibrice.moodr.mainscreen.MainActivity;
 
 public class InputActivity extends AppCompatActivity {
 
     String mood;
+    EditText edittxtTitle, edittxtDiary;
+
+    private DBManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
 
+        setTitle("Add New Diary Entry");
+
+        Button btnSubmit = findViewById(R.id.btnSubmit);
+        edittxtTitle = findViewById(R.id.edittxtTitle);
+        edittxtDiary = findViewById(R.id.edittxtDiary);
+
         // handlers for on click of each image button
         ImageButton imgbtnSad = findViewById(R.id.imgbtnSad);
         imgbtnSad.setOnClickListener(v -> {
             mood = "Sad";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
-            // do backend stuff here
         });
         ImageButton imgbtnDown = findViewById(R.id.imgbtnDown);
         imgbtnDown.setOnClickListener(v -> {
             mood = "Down";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
-            // do backend stuff here
         });
         ImageButton imgbtnOkay = findViewById(R.id.imgbtnOkay);
         imgbtnOkay.setOnClickListener(v -> {
             mood = "Okay";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
-            // do backend stuff here
         });
         ImageButton imgbtnGood = findViewById(R.id.imgbtnGood);
         imgbtnGood.setOnClickListener(v -> {
             mood = "Good";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
-            // do backend stuff here
         });
         ImageButton imgbtnHappy = findViewById(R.id.imgbtnHappy);
         imgbtnHappy.setOnClickListener(v -> {
             mood = "Happy";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
-            // do backend stuff here
         });
 
-        Button btnSubmit = findViewById(R.id.btnSubmit);
-        EditText edittxtDiary = findViewById(R.id.edittxtDiary);
+        // check if empty
         btnSubmit.setOnClickListener(v -> {
-            String diary = edittxtDiary.getText().toString();
-            if (diary.isEmpty()) {
+            String title = edittxtTitle.getText().toString();
+            String entry = edittxtDiary.getText().toString();
+            if (title.isEmpty()) {
                 Toast.makeText(this,
-                        "Please enter your diary entry...", Toast.LENGTH_SHORT).show();
+                        "Please enter a title...", Toast.LENGTH_SHORT).show();
+            } else if (entry.isEmpty()){
+                Toast.makeText(this,
+                        "Please enter a diary entry...", Toast.LENGTH_SHORT).show();
             } else {
-                // submit to database here
+                dbManager = new DBManager(this);
+                dbManager.open();
+
+                dbManager.insertDiary(title, mood, entry);
+
+                Toast.makeText(this, "Entry added", Toast.LENGTH_SHORT).show();
+                Intent returnToMain = new Intent(InputActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(returnToMain);
+
+                dbManager.close();
             }
         });
     }

@@ -72,7 +72,9 @@ The second two can just be met through the use of good programming practice.
 
 #### Appropriate use of multi-threading for file saving/loading, data upload/download and other resource-intensive operations
 
-Ensure all operations are done asynchronously, primarily concerning accessing the database to read or write from it, i.e. it should never cause a hang.
+Ensure all operations are done asynchronously, primarily concerning accessing the database to read or write from it, i.e. it should never cause a hang. 
+
+**NOTE** Android View objects are not thread-safe and therefore UI elements should never be multithreaded in Android, therefore the only place that can be multithreaded is in the database etc.
 
 #### Using at least one of the data storage methods used in the module
 
@@ -96,7 +98,6 @@ Sending the user a notification will satisfy this, as well as the inclusion of a
 
 ### TODO List
 
-- Create SQLIte Database
+- Make SQLite readable from reports
 - Create widget
-- Create reports functionality
 - Create habits functionality
