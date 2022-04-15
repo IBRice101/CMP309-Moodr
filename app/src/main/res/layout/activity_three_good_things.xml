@@ -80,6 +80,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittxtThing2" />
 
+    <TextView
+        android:id="@+id/quoteView"
+        android:layout_width="339dp"
+        android:layout_height="252dp"
+        android:gravity="center"
+        android:text="@string/a_study_conducted"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittxtThing3"
+        app:layout_constraintVertical_bias="0.221" />
+
     <Button
         android:id="@+id/btnAddTGT"
         android:layout_width="wrap_content"

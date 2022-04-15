@@ -39,4 +39,8 @@
     <string name="title_activity_reports_three_good_things">ReportsThreeGoodThingsActivity</string>
     <string name="title_activity_reports_habits">ReportsHabitsActivity</string>
     <string name="todo">TODO</string>
+    <string name="a_study_conducted">A study conducted by health services researchers in Switzerland
+        has shown that writing down three good things, that is three positive things in your day,
+        improves your ability to have a nice day, gain supportive relationships, and make meaningful
+        use of your time, this section of the app is determined to facilitate that for you!</string>
 </resources>

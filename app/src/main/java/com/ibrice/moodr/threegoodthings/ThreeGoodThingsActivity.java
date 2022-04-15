@@ -49,5 +49,9 @@ public class ThreeGoodThingsActivity extends AppCompatActivity {
                 dbManager.close();
             }
         });
+
+        // TODO: Implement SharedPreferences to increment the number of days here
+        // NOTE: https://developer.android.com/reference/android/content/SharedPreferences
+        // NOTE: https://stackoverflow.com/questions/39179974/how-to-create-a-day-counter-for-android-application
     }
 }
