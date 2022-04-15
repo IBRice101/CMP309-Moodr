@@ -3,6 +3,7 @@
     <string name="diary">Diary</string>
     <string name="habits">Habits</string>
     <string name="threegoodthings">ThreeGoodThings</string>
+    <string name="three_good_things">Three Good Things</string>
     <string name="test_123">Test 123</string>
     <string name="reports">Reports</string>
     <string name="title_activity_calendar_fragment">CalendarFragment</string>
@@ -34,4 +35,8 @@
     <string name="third_good_thing_about_today">Third good thing about today</string>
     <string name="settings">Settings</string>
     <string name="give_your_entry_a_title">Give your entry a title!</string>
+    <string name="title_activity_reports_diary">ReportsDiaryActivity</string>
+    <string name="title_activity_reports_three_good_things">ReportsThreeGoodThingsActivity</string>
+    <string name="title_activity_reports_habits">ReportsHabitsActivity</string>
+    <string name="todo">TODO</string>
 </resources>

@@ -24,49 +24,52 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnSevenDays"
+        android:id="@+id/btnReportDiary"
         android:layout_width="350dp"
         android:layout_height="64dp"
         android:layout_marginBottom="24dp"
         android:layout_marginTop="32dp"
-        android:drawableStart="@drawable/outline_history_24"
-        android:text="@string/past_7_days"
+        android:drawableLeft="@drawable/outline_history_24"
+        android:text="@string/diary"
         android:textColor="?attr/colorOnPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/btnThirtyDays"
+        app:layout_constraintBottom_toTopOf="@+id/btnReportTGT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="RtlHardcoded" />
 
     <Button
-        android:id="@+id/btnThirtyDays"
+        android:id="@+id/btnReportTGT"
         android:layout_width="350dp"
         android:layout_height="64dp"
         android:layout_marginBottom="24dp"
         android:layout_marginTop="24dp"
-        android:drawableStart="@drawable/outline_history_24"
-        android:text="@string/past_30_days"
+        android:drawableLeft="@drawable/outline_history_24"
+        android:text="@string/three_good_things"
         android:textColor="?attr/colorOnPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/btnYear"
+        app:layout_constraintBottom_toTopOf="@+id/btnReportHabits"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSevenDays" />
+        app:layout_constraintTop_toBottomOf="@+id/btnReportDiary"
+        tools:ignore="RtlHardcoded" />
 
     <Button
-        android:id="@+id/btnYear"
+        android:id="@+id/btnReportHabits"
         android:layout_width="350dp"
         android:layout_height="64dp"
         android:layout_marginBottom="288dp"
         android:layout_marginTop="24dp"
-        android:drawableStart="@drawable/outline_history_24"
-        android:text="@string/past_year"
+        android:drawableLeft="@drawable/outline_history_24"
+        android:text="@string/habits"
         android:textColor="?attr/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnThirtyDays" />
+        app:layout_constraintTop_toBottomOf="@+id/btnReportTGT"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/textView2"
@@ -82,7 +85,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnYear" />
+        app:layout_constraintTop_toBottomOf="@+id/btnReportHabits" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

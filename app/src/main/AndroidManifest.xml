@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Moodr">
         <activity
+            android:name=".reports.ReportsHabitsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_reports_habits"
+            android:theme="@style/Theme.Moodr.NoActionBar" />
+        <activity
+            android:name=".reports.ReportsThreeGoodThingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_reports_three_good_things"
+            android:theme="@style/Theme.Moodr.NoActionBar" />
+        <activity
+            android:name=".reports.ReportsDiaryActivity"
+            android:exported="false"
+            android:label="@string/title_activity_reports_diary"
+            android:theme="@style/Theme.Moodr.NoActionBar" />
+        <activity
             android:name=".settings.SettingsActivity"
             android:exported="false" />
         <activity

@@ -98,6 +98,6 @@ Sending the user a notification will satisfy this, as well as the inclusion of a
 
 ### TODO List
 
-- Make SQLite readable from reports
+- Make SQLite readable from reports - Possibly somewhere we can add multithreading due to large volumes of data being thrown at you lmao
 - Create widget
 - Create habits functionality
