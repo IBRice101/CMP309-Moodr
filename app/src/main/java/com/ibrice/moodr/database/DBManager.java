@@ -1,10 +1,14 @@
 package com.ibrice.moodr.database;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DBManager {
     private DBHelper dbHelper = null;
@@ -28,17 +32,24 @@ public class DBManager {
     }
 
     // call to insert a diary entry
+    @SuppressLint("SimpleDateFormat")
     public void insertDiary(String title, String mood, String entry) {
         ContentValues contentValues = new ContentValues();
+        // insert date automatically
+        contentValues.put(DBHelper.DATE,
+                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         contentValues.put(DBHelper.TITLE, title);
         contentValues.put(DBHelper.MOOD, mood);
         contentValues.put(DBHelper.ENTRY, entry);
         database.insert(DBHelper.DIARY_TABLE_NAME, null, contentValues);
     }
 
-    // call to insert a diary entry
+    // call to insert a ThreeGoodThings entry
+    @SuppressLint("SimpleDateFormat")
     public void insertTGT(String thing1, String thing2, String thing3) {
         ContentValues contentValues = new ContentValues();
+        contentValues.put(DBHelper.DATE,
+                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         contentValues.put(DBHelper.THING_1, thing1);
         contentValues.put(DBHelper.THING_2, thing2);
         contentValues.put(DBHelper.THING_3, thing3);
@@ -68,7 +79,7 @@ public class DBManager {
         return cursor;
     }
 
-    // fetch diary entries/data from database
+    // fetch ThreeGoodTHings entries from database
     public Cursor fetchTGT(){
         String[] columns = new String[] {
                 DBHelper._ID,

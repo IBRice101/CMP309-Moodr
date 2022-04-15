@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(habitsIntent);
         });
 
-        Button btnThreegoodthings = findViewById(R.id.btnThreegoodthings);
+        Button btnThreegoodthings = findViewById(R.id.btnThreeGoodThings);
         btnThreegoodthings.setOnClickListener(v -> {
             Intent threegoodthingsIntent = new Intent(this, ThreeGoodThingsActivity.class);
             threegoodthingsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);

@@ -16,7 +16,6 @@ import com.ibrice.moodr.R;
  * one of the sections/tabs/pages.
  */
 
-// FIXME: deprecated, https://developer.android.com/reference/androidx/fragment/app/FragmentPagerAdapter
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
@@ -24,7 +23,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
-        // FIXME: deprecated, https://developer.android.com/reference/androidx/fragment/app/FragmentPagerAdapter
         super(fm);
         mContext = context;
     }

@@ -62,7 +62,10 @@ public class InputActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(v -> {
             String title = edittxtTitle.getText().toString();
             String entry = edittxtDiary.getText().toString();
-            if (title.isEmpty()) {
+            if (mood.isEmpty()) {
+                Toast.makeText(this,
+                        "Please press one of the buttons above...", Toast.LENGTH_SHORT).show();
+            } else if (title.isEmpty()) {
                 Toast.makeText(this,
                         "Please enter a title...", Toast.LENGTH_SHORT).show();
             } else if (entry.isEmpty()){

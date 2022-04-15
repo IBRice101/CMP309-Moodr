@@ -43,4 +43,6 @@
         has shown that writing down three good things, that is three positive things in your day,
         improves your ability to have a nice day, gain supportive relationships, and make meaningful
         use of your time, this section of the app is determined to facilitate that for you!</string>
+    <string name="welcome_message">Welcome to the Moodr app! Click on \'Diary\' to get started writing your first diary entry, \'Three Good Things\' to write down three positive things that happened today, \'Habits\' to start forming positive habits, or \'reports\' to see how you\'ve been doing over the last weeks and months!</string>
+    <string name="logo_here">[LOGO HERE]</string>
 </resources>
