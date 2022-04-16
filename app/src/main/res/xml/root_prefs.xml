@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".settings.SettingsActivity">
+
+    <PreferenceCategory app:title="Notifications">
+        <SwitchPreferenceCompat
+            app:key="notificationsToggle"
+            app:title="@string/toggle_notifs"
+            app:defaultValue="true"
+            app:summaryOff="Notifications are currently off."
+            app:summaryOn="Notifications are currently on." />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Set Notification Time">
+        <!-- TODO: Add time select preference -->
+    </PreferenceCategory>
+    <PreferenceCategory app:title="App Theme">
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="darkTheme"
+            android:summaryOff="Dark Theme is currently off"
+            android:summaryOn="Dark theme is currently on"
+            app:summary="Theme is currently controlled by default device theme"
+            app:title="@string/toggle_theme"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

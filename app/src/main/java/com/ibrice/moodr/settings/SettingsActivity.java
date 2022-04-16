@@ -1,10 +1,17 @@
 package com.ibrice.moodr.settings;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.ibrice.moodr.R;
+
+import java.util.Objects;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SwitchPreferenceCompat;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -12,5 +19,38 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.settings, new SettingsFragment()).commit();
+        }
+    }
+
+    public static class SettingsFragment extends PreferenceFragmentCompat {
+        @Override
+        public void onCreatePreferences(@Nullable Bundle savedInstanceState, @Nullable String rootKey) {
+            // activity set in root_prefs
+            setPreferencesFromResource(R.xml.root_prefs, rootKey);
+
+            SwitchPreferenceCompat themeSwitch = findPreference("darkTheme");
+            
+            if (themeSwitch != null) {
+                themeSwitch.setOnPreferenceChangeListener((preference, newValue) -> {
+                    boolean isChecked = false;
+                    if (newValue instanceof Boolean)
+                        isChecked = (Boolean) newValue;
+                    if (isChecked) {
+                        Objects.requireNonNull(getPreferenceManager().getSharedPreferences())
+                                .edit().putBoolean(getString(R.string.toggle_theme), true).apply();
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    } else {
+                        Objects.requireNonNull(getPreferenceManager().getSharedPreferences())
+                                .edit().putBoolean(getString(R.string.toggle_theme), false).apply();
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    }
+
+                    return true;
+                });
+            }
+        }
     }
 }

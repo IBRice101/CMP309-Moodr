@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.ibrice.moodr.R;
 import com.ibrice.moodr.diary.CalendarActivity;
@@ -50,13 +52,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(reportsIntent);
         });
 
-    }
+        ImageButton btnSettings = findViewById(R.id.btnSettings);
+        btnSettings.setOnClickListener(v -> {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            settingsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(settingsIntent);
+        });
 
-    // functions that respond to onclick events for relevant buttons
-
-    public void openSettings(View view) {
-        Intent settingsIntent = new Intent(this, SettingsActivity.class);
-        settingsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(settingsIntent);
     }
 }
