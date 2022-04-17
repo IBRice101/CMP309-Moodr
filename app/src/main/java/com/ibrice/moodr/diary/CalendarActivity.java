@@ -26,6 +26,7 @@ public class CalendarActivity extends AppCompatActivity {
         txtDate = findViewById(R.id.txtDate);
         setDate(txtDate);
 
+        // load input view
         FloatingActionButton fab = findViewById(R.id.fabAdd);
         fab.setOnClickListener(view ->  {
             Intent fabIntent = new Intent(this, InputActivity.class);
@@ -40,7 +41,7 @@ public class CalendarActivity extends AppCompatActivity {
     public void setDate(TextView view) {
         Date today = Calendar.getInstance().getTime();
         @SuppressLint("SimpleDateFormat") SimpleDateFormat format
-                = new SimpleDateFormat("EEE, d MMM yyyy");
+                = new SimpleDateFormat("EEE, d MMM yyyy"); // ex. Sun, 29 apr 2001
         String date = format.format(today);
         view.setText("Today's date is" + " " + date);
     }

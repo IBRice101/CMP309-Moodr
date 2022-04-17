@@ -37,31 +37,36 @@ public class InputActivity extends AppCompatActivity {
             mood = "Sad";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
+
         ImageButton imgbtnDown = findViewById(R.id.imgbtnDown);
         imgbtnDown.setOnClickListener(v -> {
             mood = "Down";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
+
         ImageButton imgbtnOkay = findViewById(R.id.imgbtnOkay);
         imgbtnOkay.setOnClickListener(v -> {
             mood = "Okay";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
+
         ImageButton imgbtnGood = findViewById(R.id.imgbtnGood);
         imgbtnGood.setOnClickListener(v -> {
             mood = "Good";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
+
         ImageButton imgbtnHappy = findViewById(R.id.imgbtnHappy);
         imgbtnHappy.setOnClickListener(v -> {
             mood = "Happy";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
 
-        // check if empty
         btnSubmit.setOnClickListener(v -> {
             String title = edittxtTitle.getText().toString();
             String entry = edittxtDiary.getText().toString();
+
+            // check if fields are empty, else, insert into db
             if (mood.isEmpty()) {
                 Toast.makeText(this,
                         "Please press one of the buttons above...", Toast.LENGTH_SHORT).show();

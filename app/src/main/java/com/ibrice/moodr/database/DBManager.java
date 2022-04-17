@@ -58,7 +58,9 @@ public class DBManager {
 
     // TODO: make able to fetch based on timeframe, probably using date
     // fetch diary entries/data from database
+    // "Cursor" provides R/W access to db, NOTE: this is where async through threads should be done
     public Cursor fetchDiary(){
+        // create array of strings representing each column in the db
         String[] columns = new String[] {
                 DBHelper._ID,
                 DBHelper.DATE,
@@ -66,6 +68,7 @@ public class DBManager {
                 DBHelper.MOOD,
                 DBHelper.ENTRY
         };
+        // query the database using the table name and columns generated previously
         Cursor cursor = database.query(DBHelper.DIARY_TABLE_NAME,
                 columns,
                 null,

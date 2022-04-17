@@ -31,13 +31,18 @@ public class SettingsActivity extends AppCompatActivity {
             // activity set in root_prefs
             setPreferencesFromResource(R.xml.root_prefs, rootKey);
 
+            // get theme switch preference toggle
             SwitchPreferenceCompat themeSwitch = findPreference("darkTheme");
             
             if (themeSwitch != null) {
+
+                // when sitch is toggled
                 themeSwitch.setOnPreferenceChangeListener((preference, newValue) -> {
-                    boolean isChecked = false;
+                    boolean isChecked = false; // set whether the switch is checked
                     if (newValue instanceof Boolean)
                         isChecked = (Boolean) newValue;
+
+                    // if checked, dark theme, else, light theme
                     if (isChecked) {
                         Objects.requireNonNull(getPreferenceManager().getSharedPreferences())
                                 .edit().putBoolean(getString(R.string.toggle_theme), true).apply();

@@ -34,6 +34,7 @@ public class ThreeGoodThingsActivity extends AppCompatActivity {
             String thing2 = edittxtThing2.getText().toString();
             String thing3 = edittxtThing3.getText().toString();
 
+            // check if empty, else, insert content into database
             if (thing1.isEmpty() || thing2.isEmpty() || thing3.isEmpty()){
                 Toast.makeText(this, "Please enter three good things that happened to you today", Toast.LENGTH_SHORT).show();
             } else {
