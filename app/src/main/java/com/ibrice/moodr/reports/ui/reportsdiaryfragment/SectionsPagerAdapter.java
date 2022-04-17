@@ -1,4 +1,4 @@
-package com.ibrice.moodr.reports.ui.main;
+package com.ibrice.moodr.reports.ui.reportsdiaryfragment;
 
 import android.content.Context;
 
@@ -14,6 +14,8 @@ import com.ibrice.moodr.R;
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
+ * TODO: implement data return from SQLite db
+ * see https://stackoverflow.com/questions/47954066/displaying-all-data-from-sqlite-database-into-listview-in-tabbed-activity
  */
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -31,8 +33,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        // Return a ReportsDiaryFragment (defined as a static inner class below).
+        return ReportsDiaryFragment.newInstance(position + 1);
     }
 
     @Nullable

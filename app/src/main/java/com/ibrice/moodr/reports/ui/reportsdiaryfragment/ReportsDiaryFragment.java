@@ -1,4 +1,4 @@
-package com.ibrice.moodr.reports.ui.main;
+package com.ibrice.moodr.reports.ui.reportsdiaryfragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,23 +9,18 @@ import android.widget.TextView;
 import com.ibrice.moodr.databinding.FragmentReportsDiaryBinding;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-/**
- * A placeholder fragment containing a simple view.
- */
-public class PlaceholderFragment extends Fragment {
+public class ReportsDiaryFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     private PageViewModel pageViewModel;
     private FragmentReportsDiaryBinding binding;
 
-    public static PlaceholderFragment newInstance(int index) {
-        PlaceholderFragment fragment = new PlaceholderFragment();
+    public static ReportsDiaryFragment newInstance(int index) {
+        ReportsDiaryFragment fragment = new ReportsDiaryFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
