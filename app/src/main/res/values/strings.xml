@@ -48,4 +48,6 @@
     <string name="toggle_theme">Toggle Dark Theme</string>
     <string name="toggle_notifs">Toggle Notifications</string>
     <string name="settings_button">Settings Button</string>
+    <string name="logo">Logo</string>
+    <string name="welcome_to_moodr">Welcome to Moodr!</string>
 </resources>
