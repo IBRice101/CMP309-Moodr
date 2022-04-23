@@ -27,7 +27,7 @@ public class InputActivity extends AppCompatActivity {
 
         setTitle("Add New Diary Entry");
 
-        Button btnSubmit = findViewById(R.id.btnSubmit);
+        Button btnSubmitDiary = findViewById(R.id.btnSubmitHabit);
         edittxtTitle = findViewById(R.id.edittxtTitle);
         edittxtDiary = findViewById(R.id.edittxtDiary);
 
@@ -62,7 +62,7 @@ public class InputActivity extends AppCompatActivity {
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
 
-        btnSubmit.setOnClickListener(v -> {
+        btnSubmitDiary.setOnClickListener(v -> {
             String title = edittxtTitle.getText().toString();
             String entry = edittxtDiary.getText().toString();
 
@@ -82,7 +82,7 @@ public class InputActivity extends AppCompatActivity {
 
                 dbManager.insertDiary(title, mood, entry);
 
-                Toast.makeText(this, "Entry added", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Entry added!", Toast.LENGTH_SHORT).show();
                 Intent returnToMain = new Intent(InputActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(returnToMain);
 

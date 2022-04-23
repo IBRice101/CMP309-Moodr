@@ -145,4 +145,6 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="add_a_new_habit">Add a new habit</string>
+    <string name="hour_colon">Hour:</string>
+    <string name="minute_colob">Minute:</string>
 </resources>

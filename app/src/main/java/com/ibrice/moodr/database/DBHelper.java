@@ -13,7 +13,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // table names
     public static final String DIARY_TABLE_NAME = "dbDiary";
     public static final String TGT_TABLE_NAME = "dbThreeGoodThings";
-    // TODO: Design habits and include here when done
+    public static final String HABITS_TABLE_NAME = "dbHabits";
 
     // table IDs
     public static final String _ID = "_id";
@@ -22,18 +22,18 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DATE = "date";
 
     // diary variables
-    public static final String TITLE = "title";
-    public static final String MOOD = "mood";
-    public static final String ENTRY = "entry";
+    public static final String DIARY_TITLE = "title";
+    public static final String DIARY_MOOD = "mood";
+    public static final String DIARY_ENTRY = "entry";
 
     // create table
     private static final String DIARY_CREATE_TABLE =
             "CREATE TABLE " + DIARY_TABLE_NAME +
                     "(" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     DATE + " TEXT NOT NULL, " +
-                    TITLE + " TEXT NOT NULL, " +
-                    MOOD + " TEXT NOT NULL, " +
-                    ENTRY + " TEXT NOT NULL)";
+                    DIARY_TITLE + " TEXT NOT NULL, " +
+                    DIARY_MOOD + " TEXT NOT NULL, " +
+                    DIARY_ENTRY + " TEXT NOT NULL)";
 
     // three good things values
     public static final String THING_1 = "Thing1";
@@ -48,6 +48,20 @@ public class DBHelper extends SQLiteOpenHelper {
                     THING_1 + " TEXT NOT NULL, " +
                     THING_2 + " TEXT NOT NULL, " +
                     THING_3 + " TEXT NOT NULL)";
+
+    // habits values
+    public static final String HABITS_TITLE = "title";
+    public static final String HABITS_DESCRIPTION = "description";
+    public static final String HABITS_TIME = "time";
+
+    // create table
+    private static final String HABITS_CREATE_TABLE =
+            "CREATE TABLE " + HABITS_TABLE_NAME +
+                    "(" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    DATE + " TEXT NOT NULL, " +
+                    HABITS_TITLE + " TEXT NOT NULL, " +
+                    HABITS_DESCRIPTION + " TEXT NOT NULL, " +
+                    HABITS_TIME + " TEXT NOT NULL)";
 
 
     // creating a helper object to manage the database

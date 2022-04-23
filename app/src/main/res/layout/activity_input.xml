@@ -13,7 +13,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/how_are_you"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@id/btnSubmit"
+        app:layout_constraintBottom_toTopOf="@id/btnSubmitDiary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -104,7 +104,7 @@
         android:singleLine="false"
         android:textColor="@color/black"
         android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmitDiary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,7 +130,7 @@
         android:singleLine="false"
         android:textColor="@color/black"
         android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmitDiary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +139,7 @@
         tools:ignore="LabelFor" />
 
     <Button
-        android:id="@+id/btnSubmit"
+        android:id="@+id/btnSubmitDiary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
