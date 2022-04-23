@@ -27,7 +27,7 @@ public class CalendarActivity extends AppCompatActivity {
         setDate(txtDate);
 
         // load input view
-        FloatingActionButton fab = findViewById(R.id.fabAdd);
+        FloatingActionButton fab = findViewById(R.id.fabAddDiary);
         fab.setOnClickListener(view ->  {
             Intent fabIntent = new Intent(this, InputActivity.class);
             fabIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);

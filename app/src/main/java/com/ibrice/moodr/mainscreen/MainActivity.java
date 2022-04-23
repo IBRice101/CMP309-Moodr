@@ -4,14 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.ibrice.moodr.R;
 import com.ibrice.moodr.diary.CalendarActivity;
-import com.ibrice.moodr.habits.HabitsActivity;
+import com.ibrice.moodr.habits.CreateHabitsActivity;
+import com.ibrice.moodr.habits.ViewHabitsActivity;
 import com.ibrice.moodr.reports.ReportsActivity;
 import com.ibrice.moodr.settings.SettingsActivity;
 import com.ibrice.moodr.threegoodthings.ThreeGoodThingsActivity;
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnHabits = findViewById(R.id.btnHabits);
         btnHabits.setOnClickListener(v -> {
-            Intent habitsIntent = new Intent(this, HabitsActivity.class);
+            Intent habitsIntent = new Intent(this, ViewHabitsActivity.class);
             habitsIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(habitsIntent);
         });
