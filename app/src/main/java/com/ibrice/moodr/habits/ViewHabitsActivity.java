@@ -28,7 +28,7 @@ public class ViewHabitsActivity extends AppCompatActivity {
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
-        toolBarLayout.setTitle(getTitle());
+        toolBarLayout.setTitle("View Your Habits");
 
         FloatingActionButton fab = binding.fabAddHabit;
         fab.setOnClickListener(view ->  {

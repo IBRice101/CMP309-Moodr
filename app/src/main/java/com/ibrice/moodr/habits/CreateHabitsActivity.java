@@ -14,12 +14,12 @@ import com.ibrice.moodr.database.DBManager;
 
 public class CreateHabitsActivity extends AppCompatActivity {
 
-    TimePicker timePicker;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_habits);
+
+        TimePicker timePicker = findViewById(R.id.timePicker);
 
         int hour = timePicker.getHour();
         int minute = timePicker.getMinute();
