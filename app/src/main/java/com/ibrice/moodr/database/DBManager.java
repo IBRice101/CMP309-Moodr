@@ -21,9 +21,10 @@ public class DBManager {
     }
 
     // open database
-    public void open() throws SQLException {
+    public DBManager open() throws SQLException {
         dbHelper = new DBHelper(context);
         database = dbHelper.getWritableDatabase();
+        return this;
     }
 
     // close database
@@ -60,10 +61,12 @@ public class DBManager {
     @SuppressLint("SimpleDateFormat")
     public void insertHabits(String title, String description, String time) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DBHelper.DATE, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        contentValues.put(DBHelper.DATE,
+                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         contentValues.put(DBHelper.HABITS_TITLE, title);
         contentValues.put(DBHelper.HABITS_DESCRIPTION, description);
         contentValues.put(DBHelper.HABITS_TIME, time);
+        database.insert(DBHelper.HABITS_TABLE_NAME, null, contentValues);
     }
 
     // TODO: make able to fetch based on timeframe, probably using date
@@ -123,7 +126,7 @@ public class DBManager {
                 DBHelper.HABITS_DESCRIPTION,
                 DBHelper.HABITS_TIME
         };
-        Cursor cursor = database.query(DBHelper.TGT_TABLE_NAME,
+        Cursor cursor = database.query(DBHelper.HABITS_TABLE_NAME,
                 columns,
                 null,
                 null,
@@ -134,5 +137,34 @@ public class DBManager {
             cursor.moveToFirst();
         }
         return cursor;
+
+    }
+
+    // take id (for if just one entry requires deletion), and bool to check if all should be deleted or not
+    public void deleteDiary(long id, boolean deleteAll) {
+        if (deleteAll) {
+            database.delete(DBHelper.DIARY_TABLE_NAME, null, null);
+            dbHelper.close();
+        } else {
+            database.delete(DBHelper.DIARY_TABLE_NAME, DBHelper._ID + " = " + id, null);
+        }
+    }
+
+    public void deleteTGT(long id, boolean deleteAll) {
+        if (deleteAll) {
+            database.delete(DBHelper.TGT_TABLE_NAME, null, null);
+            dbHelper.close();
+        } else {
+            database.delete(DBHelper.TGT_TABLE_NAME, DBHelper._ID + " = " + id, null);
+        }
+    }
+
+    public void deleteHabits(long id, boolean deleteAll) {
+        if (deleteAll) {
+            database.delete(DBHelper.HABITS_TABLE_NAME, null, null);
+            dbHelper.close();
+        } else {
+            database.delete(DBHelper.HABITS_TABLE_NAME, DBHelper._ID + " = " + id, null);
+        }
     }
 }

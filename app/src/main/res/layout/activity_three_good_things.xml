@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edittxtThing2" />
 
     <TextView
-        android:id="@+id/quoteView"
+        android:id="@+id/txtTGTStudyText"
         android:layout_width="339dp"
         android:layout_height="252dp"
         android:gravity="center"

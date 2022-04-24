@@ -8,7 +8,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // database name and version
     public static final String DB_NAME = "MOODR.DB";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
 
     // table names
     public static final String DIARY_TABLE_NAME = "dbDiary";
@@ -74,6 +74,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DIARY_CREATE_TABLE);
         db.execSQL(TGT_CREATE_TABLE);
+        db.execSQL(HABITS_CREATE_TABLE);
     }
 
     // create new tables when this is called
@@ -81,6 +82,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + DIARY_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + TGT_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + HABITS_TABLE_NAME);
         onCreate(db);
     }
 }
