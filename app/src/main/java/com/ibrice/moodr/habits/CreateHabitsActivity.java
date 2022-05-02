@@ -2,6 +2,7 @@ package com.ibrice.moodr.habits;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -21,16 +22,18 @@ public class CreateHabitsActivity extends AppCompatActivity {
 
         TimePicker timePicker = findViewById(R.id.timePicker);
 
-        int hour = timePicker.getHour();
-        int minute = timePicker.getMinute();
-
-        String timePicked = hour + ":" + minute;
+        timePicker.setIs24HourView(true);
 
         Button btnSubmitHabit = findViewById(R.id.btnSubmitHabit);
         EditText edittxtHabitTitle = findViewById(R.id.edittxtHabitTitle);
         EditText edittxtHabitDescription = findViewById(R.id.edittxtHabitDescription);
 
         btnSubmitHabit.setOnClickListener(v -> {
+            int hour = timePicker.getHour();
+            int minute = timePicker.getMinute();
+
+            @SuppressLint("DefaultLocale") String timePicked = String.format("%02d", hour) + ":" + String.format("%02d", minute);
+
             String title = edittxtHabitTitle.getText().toString();
             String description = edittxtHabitDescription.getText().toString();
 

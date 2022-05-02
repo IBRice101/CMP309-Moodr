@@ -27,7 +27,7 @@ public class InputActivity extends AppCompatActivity {
 
         setTitle("Add New Diary Entry");
 
-        Button btnSubmitDiary = findViewById(R.id.btnSubmitHabit);
+        Button btnSubmitDiary = (Button) findViewById(R.id.btnSubmitDiary);
         edittxtTitle = findViewById(R.id.edittxtTitle);
         edittxtDiary = findViewById(R.id.edittxtDiary);
 

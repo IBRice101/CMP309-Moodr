@@ -21,10 +21,9 @@ public class DBManager {
     }
 
     // open database
-    public DBManager open() throws SQLException {
+    public void open() throws SQLException {
         dbHelper = new DBHelper(context);
         database = dbHelper.getWritableDatabase();
-        return this;
     }
 
     // close database
