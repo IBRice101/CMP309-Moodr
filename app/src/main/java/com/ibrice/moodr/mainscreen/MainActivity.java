@@ -1,7 +1,8 @@
 package com.ibrice.moodr.mainscreen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,11 +10,16 @@ import android.widget.ImageButton;
 
 import com.ibrice.moodr.R;
 import com.ibrice.moodr.diary.CalendarActivity;
-import com.ibrice.moodr.habits.CreateHabitsActivity;
 import com.ibrice.moodr.habits.ViewHabitsActivity;
+import com.ibrice.moodr.notifications.NotificationReciever;
 import com.ibrice.moodr.reports.ReportsActivity;
 import com.ibrice.moodr.settings.SettingsActivity;
 import com.ibrice.moodr.threegoodthings.ThreeGoodThingsActivity;
+
+import java.util.Calendar;
+import java.util.Date;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,5 +64,30 @@ public class MainActivity extends AppCompatActivity {
             startActivity(settingsIntent);
         });
 
+        // notification stuff
+
+    }
+
+    // alarm instance to set notification at specific time
+    public void notifAlarm() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 17); // set to be at 5 PM
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+
+        if (calendar.getTime().compareTo(new Date()) < 0) {
+            calendar.add(Calendar.DAY_OF_MONTH, 1);
+        }
+
+        Intent intent = new Intent(getApplicationContext(), NotificationReciever.class);
+        @SuppressLint("UnspecifiedImmutableFlag")
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
+                0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        if (alarmManager != null){
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                    AlarmManager.INTERVAL_DAY, pendingIntent);
+        }
     }
 }

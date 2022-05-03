@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".habits.CreateHabitsActivity">
 
-    <!-- TODO: Add Habits stuff -->
-
     <Button
         android:id="@+id/btnSubmitHabit"
         android:layout_width="wrap_content"

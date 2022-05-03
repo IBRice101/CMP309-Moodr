@@ -49,7 +49,7 @@ public class ViewHabitsActivity extends AppCompatActivity {
 
         // TODO: <multithread>
 
-        // fetch quote from db
+        // fetch contents from db
         Cursor cursorHabits = dbManager.fetchHabits();
 
         // if list view is empty, display this message
@@ -65,11 +65,13 @@ public class ViewHabitsActivity extends AppCompatActivity {
         };
 
         // set adapter to grab habits
-        SimpleCursorAdapter adapterHabits = new SimpleCursorAdapter(this, R.layout.activity_view_habits_text, cursorHabits, from, to, 0);
+        SimpleCursorAdapter adapterHabits = new SimpleCursorAdapter(this,
+                R.layout.activity_view_habits_text, cursorHabits, from, to, 0);
         adapterHabits.notifyDataSetChanged();
 
         // add habit to list view
         listHabits.setAdapter(adapterHabits);
+
         // </multithread>
 
         // on habit click, allow user to delete entry
