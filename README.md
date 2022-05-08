@@ -13,9 +13,7 @@ A Mood Calendar application I made for Android Dev at Abertay University
 - Store data on users locally and provide analysis of the last week, month, and year in their mood
 - Habit Former (walks, meditation, and so on) with timer and special notification
 
-## Requirements
-
-### Functional Requirements
+## Functional Requirements
 
 1. Allow the user to input how they're feeling to a database object linked to the date
    1. Five buttons representing a sliding scale of happiness, from 1 = sad to 5 = happy
@@ -39,7 +37,7 @@ A Mood Calendar application I made for Android Dev at Abertay University
    3. Will need a logo for this, also
 7. Add more possibly depending on requirements
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 1. Responsiveness
    1. Asynchronous operations for transactions
@@ -50,49 +48,49 @@ A Mood Calendar application I made for Android Dev at Abertay University
 5. Attractiveness
    1. Probably Material UI
 
-### How Each Assessment Criteria Will Be Met
+## How Each Assessment Criteria Will Be Met
 
-#### Principles of Object-Oriented programming
+### Principles of Object-Oriented programming
 
 This requirement will be met by virtue of developing the app in Java, a fundamentally Object-Oriented programming language. 
 
-#### At least 2 Activities and communication between Activities and returning a result from Activity
+### At least 2 Activities and communication between Activities and returning a result from Activity
 
-The application as planned currently has 5 activities. The primary place communication between activities will be achieved is in the TGT and Diary/Calendar input's relationship with the "Reports" section, where data will be sent between the two to facilitate the functionality therein. The Settings Activity will also return results, allowing for the user to change the theme and customise notification times where relevant
+The application as planned currently has 5 sets of activities. The primary place communication between activities will be achieved is in the TGT and Diary/Calendar input's relationship with the "Reports" section, where data will be sent between the two to facilitate the functionality therein. The Settings Activity will also return results, allowing for the user to change the theme and customise notification times where relevant
 
-####  At least 3 screens/pages showing different aspects of the app and utilising multiple layouts, views and/or UI widgets. These can include Activities, Tabs, Fragments, Navigation Drawer menus, pop-up dialogs, webviews, etc.
+###  At least 3 screens/pages showing different aspects of the app and utilising multiple layouts, views and/or UI widgets. These can include Activities, Tabs, Fragments, Navigation Drawer menus, pop-up dialogs, webviews, etc.
 
 The app primarily uses Activities to navigate at the moment, however a widget to launch the InputActivity from the home screen directly is planned, as well as a tab view within the activities for the reports generated, with the tabs working to shift between weekly, monthly, and yearly reports for each of TGT and Diary functionality
 
-#### Appropriate application lifecycle, including correct navigation through Activity stack, handling of device orientation changes and correct use of lifecycle callback functions for registering/unregistering receivers and listeners, saving/restoring data, etc.
+### Appropriate application lifecycle, including correct navigation through Activity stack, handling of device orientation changes and correct use of lifecycle callback functions for registering/unregistering receivers and listeners, saving/restoring data, etc.
 
 This requirement will be met by making sure that the app state is restored when coming back into view to the user after being closed.
 
 The second two can just be met through the use of good programming practice.
 
-#### Appropriate use of multi-threading for file saving/loading, data upload/download and other resource-intensive operations
+### Appropriate use of multi-threading for file saving/loading, data upload/download and other resource-intensive operations
 
 Ensure all operations are done asynchronously, primarily concerning accessing the database to read or write from it, i.e. it should never cause a hang. 
 
 **NOTE** Android View objects are not thread-safe and therefore UI elements should never be multithreaded in Android, therefore the only place that can be multithreaded is in the database etc.
 
-#### Using at least one of the data storage methods used in the module
+### Using at least one of the data storage methods used in the module
 
 The use of SQLIte satisfies this requirement
 
-#### Using at least one of the native Android API features OR Mobile networking technologies
+### Using at least one of the native Android API features OR Mobile networking technologies
 
 Sending the user a notification will satisfy this, as well as the inclusion of an app widget.
 
-### App Hierarchy
+## App Hierarchy
 
 \[Insert Image Here\]
 
-### Other stuff
+## Other stuff
 
 \[Insert as and when required\]
 
-### References
+## References
 
 \[Insert as and when required\]
 

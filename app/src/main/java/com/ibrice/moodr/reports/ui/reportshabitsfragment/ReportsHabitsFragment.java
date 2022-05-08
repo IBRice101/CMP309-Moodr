@@ -1,4 +1,4 @@
-package com.ibrice.moodr.reports.ui.reportshabitsfragment;
+package com.ibrice.moodr.reports.ui.reportsHabitsFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

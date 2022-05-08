@@ -29,6 +29,7 @@
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/activity_reports_habits.xml" value="0.18802083333333333" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/activity_reports_three_good_things.xml" value="0.18802083333333333" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/activity_settings.xml" value="0.358695652173913" />
+        <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/activity_splash_screen.xml" value="0.27445652173913043" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/activity_three_good_things.xml" value="0.24954710144927536" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/activity_view_habits.xml" value="0.36666666666666664" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/activity_view_habits_text.xml" value="0.36666666666666664" />
@@ -37,6 +38,9 @@
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/fragment_reports_diary.xml" value="0.36666666666666664" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/fragment_reports_habits.xml" value="0.35260416666666666" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/fragment_reports_three_good_things.xml" value="0.36666666666666664" />
+        <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/listrow_reports_diary.xml" value="0.36666666666666664" />
+        <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/listrow_reports_habits.xml" value="0.36666666666666664" />
+        <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/listrow_reports_three_good_things.xml" value="0.36666666666666664" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/popup_delete_habit.xml" value="0.36666666666666664" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/refer_settings.xml" value="0.36666666666666664" />
         <entry key="..\:/Year3/CMP309-T2/PracticalGroups/Assessment/Moodr/app/src/main/res/layout/root_preferences.xml" value="0.36666666666666664" />
