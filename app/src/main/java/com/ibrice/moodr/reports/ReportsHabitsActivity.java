@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.ibrice.moodr.databinding.ActivityReportsHabitsBinding;
-import com.ibrice.moodr.reports.ui.reportshabitsfragment.SectionsPagerAdapter;
+import com.ibrice.moodr.reports.ui.reportsHabitsFragment.SectionsPagerAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;

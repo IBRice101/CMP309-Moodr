@@ -1,4 +1,4 @@
-package com.ibrice.moodr.reports.ui.reportsthreegoodthingsfragment;
+package com.ibrice.moodr.reports.ui.reportsThreeGoodThingsFragment;
 
 import android.content.Context;
 

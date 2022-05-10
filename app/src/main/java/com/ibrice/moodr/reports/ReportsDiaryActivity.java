@@ -4,20 +4,18 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.ibrice.moodr.databinding.ActivityReportsDiaryBinding;
-import com.ibrice.moodr.reports.ui.reportsdiaryfragment.SectionsPagerAdapter;
+import com.ibrice.moodr.reports.ui.reportsDiaryFragment.SectionsPagerAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 public class ReportsDiaryActivity extends AppCompatActivity {
 
-    private ActivityReportsDiaryBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityReportsDiaryBinding.inflate(getLayoutInflater());
+        com.ibrice.moodr.databinding.ActivityReportsDiaryBinding binding = ActivityReportsDiaryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());

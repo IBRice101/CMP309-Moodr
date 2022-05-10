@@ -1,6 +1,5 @@
 package com.ibrice.moodr.settings;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.ibrice.moodr.R;
@@ -23,6 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.settings, new SettingsFragment()).commit();
         }
+
+        // TODO: add notification test button (that doesn't work when notifications are disallowed)
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {

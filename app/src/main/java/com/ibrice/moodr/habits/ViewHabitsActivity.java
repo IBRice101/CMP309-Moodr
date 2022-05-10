@@ -47,8 +47,6 @@ public class ViewHabitsActivity extends AppCompatActivity {
         DBManager dbManager = new DBManager(this);
         dbManager.open();
 
-        // TODO: <multithread>
-
         // fetch contents from db
         Cursor cursorHabits = dbManager.fetchHabits();
 
@@ -71,8 +69,6 @@ public class ViewHabitsActivity extends AppCompatActivity {
 
         // add habit to list view
         listHabits.setAdapter(adapterHabits);
-
-        // </multithread>
 
         // on habit click, allow user to delete entry
         listHabits.setOnItemClickListener((parent, view, position, id) -> {

@@ -1,4 +1,4 @@
-package com.ibrice.moodr.reports.ui.reportshabitsfragment;
+package com.ibrice.moodr.reports.ui.reportsHabitsFragment;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 public class PageViewModel extends ViewModel {
 
     private final MutableLiveData<Integer> mIndex = new MutableLiveData<>();
-    private final LiveData<String> mText = Transformations.map(mIndex, input -> "Hello world from Reports Habits fragment, section: " + input);
+    private final LiveData<String> mText = Transformations.map(mIndex, input -> "Habits Reports: " + input);
 
     public void setIndex(int index) {
         mIndex.setValue(index);

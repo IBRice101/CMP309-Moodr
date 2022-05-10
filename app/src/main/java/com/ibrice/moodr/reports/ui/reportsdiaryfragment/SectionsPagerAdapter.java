@@ -1,4 +1,4 @@
-package com.ibrice.moodr.reports.ui.reportsdiaryfragment;
+package com.ibrice.moodr.reports.ui.reportsDiaryFragment;
 
 import android.content.Context;
 
@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.ibrice.moodr.R;
+import com.ibrice.moodr.reports.ui.reportsDiaryFragment.ReportsDiaryFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

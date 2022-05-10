@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtReportsHabitsID"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="4dp"
+        android:padding="3dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtReportsHabitsTitle"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/txtReportsHabitsID"
+        android:padding="3dp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtReportsHabitsTime"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_toEndOf="@id/txtReportsHabitsTitle"
+        android:padding="3dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtReportsHabitsDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/txtReportsHabitsTime"
+        android:maxLines="5"
+        android:padding="3dp"
+        android:visibility="visible" />
+
+</RelativeLayout>

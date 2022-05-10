@@ -12,9 +12,6 @@
             app:summaryOff="Notifications are currently off."
             app:summaryOn="Notifications are currently on." />
     </PreferenceCategory>
-    <PreferenceCategory app:title="Set Notification Time">
-        <!-- TODO: Add time select preference -->
-    </PreferenceCategory>
     <PreferenceCategory app:title="App Theme">
         <SwitchPreferenceCompat
             app:defaultValue="true"
