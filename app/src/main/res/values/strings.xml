@@ -66,4 +66,5 @@
     <string name="you_currently_have_no_habits">You currently have no habits, add a habit by
         pressing the + icon in the top right</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_good_things_added_yet">No Good Things Added Yet!</string>
 </resources>

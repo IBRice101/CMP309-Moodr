@@ -7,14 +7,14 @@
     tools:context=".threegoodthings.ThreeGoodThingsActivity">
 
     <TextView
-        android:id="@+id/txtDay"
+        android:id="@+id/txtSubmission"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:layout_marginEnd="150dp"
         android:layout_marginStart="150dp"
         android:layout_marginTop="32dp"
-        android:text="@string/day_number"
+        android:text="@string/no_good_things_added_yet"
         android:textSize="24sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/edittxtThing1"
@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDay" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSubmission" />
 
     <EditText
         android:id="@+id/edittxtThing2"

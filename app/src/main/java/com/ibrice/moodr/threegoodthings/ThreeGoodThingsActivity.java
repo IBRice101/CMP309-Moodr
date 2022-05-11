@@ -1,9 +1,15 @@
 package com.ibrice.moodr.threegoodthings;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ibrice.moodr.R;
@@ -16,18 +22,32 @@ public class ThreeGoodThingsActivity extends AppCompatActivity {
 
     Button btnSubmit;
     EditText edittxtThing1, edittxtThing2, edittxtThing3;
+    TextView txtSubmissionCount;
+
+    private SharedPreferences counter;
+    private int numSubmissions;
 
     private DBManager dbManager;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_good_things);
 
+        txtSubmissionCount = (TextView) findViewById(R.id.txtSubmission);
+
         btnSubmit = findViewById(R.id.btnAddTGT);
         edittxtThing1 = findViewById(R.id.edittxtThing1);
         edittxtThing2 = findViewById(R.id.edittxtThing2);
         edittxtThing3 = findViewById(R.id.edittxtThing3);
+
+        counter = getApplicationContext().getSharedPreferences("com.ibrice.moodr.threegoodthings.ThreeGoodThingsActivity", Context.MODE_PRIVATE);
+        numSubmissions = counter.getInt("submissions", 0);
+
+        if (numSubmissions != 0) {
+            txtSubmissionCount.setText("Submissions: " + numSubmissions);
+        }
 
         btnSubmit.setOnClickListener(v -> {
             String thing1 = edittxtThing1.getText().toString();
@@ -43,6 +63,8 @@ public class ThreeGoodThingsActivity extends AppCompatActivity {
 
                 dbManager.insertTGT(thing1, thing2, thing3);
 
+                numSubmissions();
+
                 Toast.makeText(this, "Entry added", Toast.LENGTH_SHORT).show();
                 Intent returnToMain = new Intent(ThreeGoodThingsActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(returnToMain);
@@ -50,9 +72,13 @@ public class ThreeGoodThingsActivity extends AppCompatActivity {
                 dbManager.close();
             }
         });
+    }
 
-        // TODO: Implement SharedPreferences to increment the number of days here
-        // NOTE: https://developer.android.com/reference/android/content/SharedPreferences
-        // NOTE: https://stackoverflow.com/questions/39179974/how-to-create-a-day-counter-for-android-application
+    public void numSubmissions(){
+        numSubmissions += 1;
+
+        // update the value of numSubmissions each time its incremented
+        counter.edit().putInt("submissions", numSubmissions).apply();
+        Log.i("Test: ", Integer.toString(counter.getInt("submissions", numSubmissions)));
     }
 }
