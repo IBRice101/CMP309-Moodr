@@ -41,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         testNotification.setOnClickListener(v -> {
             if (notificationsOn) {
+                // call notification function
                 NotificationHelper notificationHelper = new NotificationHelper(this);
                 notificationHelper.createNotification();
             }  // else do nothing

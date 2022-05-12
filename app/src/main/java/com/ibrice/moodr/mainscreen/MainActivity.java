@@ -65,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // notification stuff
-
-    }
-
-    // alarm instance to set notification at specific time
-    public void notifAlarm() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 17); // set to be at 5 PM
         calendar.set(Calendar.MINUTE, 0);
@@ -82,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
         @SuppressLint("UnspecifiedImmutableFlag")
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
-                0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         if (alarmManager != null){

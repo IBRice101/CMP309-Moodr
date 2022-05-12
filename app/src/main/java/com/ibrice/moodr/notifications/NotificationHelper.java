@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.provider.Settings;
 
 import com.ibrice.moodr.R;
+import com.ibrice.moodr.mainscreen.MainActivity;
 
 import androidx.core.app.NotificationCompat;
 
@@ -32,19 +33,27 @@ public class NotificationHelper extends NotificationCompat {
         PendingIntent resultPendingIntent = PendingIntent.getActivity(notificationContext,
                 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
+        // instantiate notification manager
+        NotificationManager notificationManager =
+                (NotificationManager) notificationContext.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        Intent repeatingIntent = new Intent(notificationContext, MainActivity.class);
+        repeatingIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent =
+                PendingIntent.getActivity(notificationContext, 100, repeatingIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+
         // set notification content
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(notificationContext, NOTIFICATION_CHANNEL_ID);
         notificationBuilder.setSmallIcon(R.drawable.ic_logo);
-        notificationBuilder.setContentTitle("Come improve your mood!")
+        notificationBuilder.setContentIntent(pendingIntent)
+                .setContentTitle("Come improve your mood!")
                 .setContentText("Add entries to your diary, three good things, or habits")
                 .setAutoCancel(false)
                 .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
                 .setContentIntent(resultPendingIntent);
-
-        // instantiate notification manager
-        NotificationManager notificationManager =
-                (NotificationManager) notificationContext.getSystemService(Context.NOTIFICATION_SERVICE);
 
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
 
