@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // notification stuff
+        // set time
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 17); // set to be at 5 PM
         calendar.set(Calendar.MINUTE, 0);
@@ -74,12 +75,14 @@ public class MainActivity extends AppCompatActivity {
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }
 
+        // get notification receiver, pending intent
         Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
         @SuppressLint("UnspecifiedImmutableFlag")
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
                 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
+        // get alarm manager for time
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         if (alarmManager != null){
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                     AlarmManager.INTERVAL_DAY, pendingIntent);

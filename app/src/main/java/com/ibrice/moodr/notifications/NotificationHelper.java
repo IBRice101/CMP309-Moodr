@@ -40,9 +40,9 @@ public class NotificationHelper extends NotificationCompat {
         Intent repeatingIntent = new Intent(notificationContext, MainActivity.class);
         repeatingIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-        @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent =
-                PendingIntent.getActivity(notificationContext, 100, repeatingIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT);
+        @SuppressLint("UnspecifiedImmutableFlag")
+        PendingIntent pendingIntent = PendingIntent.getActivity(notificationContext, 100,
+                repeatingIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // set notification content
         NotificationCompat.Builder notificationBuilder =
