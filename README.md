@@ -60,7 +60,7 @@ The application as planned currently has 5 sets of activities. The primary place
 
 ###  At least 3 screens/pages showing different aspects of the app and utilising multiple layouts, views and/or UI widgets. These can include Activities, Tabs, Fragments, Navigation Drawer menus, pop-up dialogs, webviews, etc.
 
-The app primarily uses Activities to navigate at the moment, however a widget to launch the InputActivity from the home screen directly is planned, as well as a tab view within the activities for the reports generated, with the tabs working to shift between weekly, monthly, and yearly reports for each of TGT and Diary functionality
+The app primarily uses Activities to navigate at the moment, however a widget to launch the InputActivity from the home screen directly is planned, as well as a tab view within the activities for the reports generated, with the tabs working to shift between weekly, monthly, and yearly reports for each of TGT and Diary functionality. There is also a splash screen on startup.
 
 ### Appropriate application lifecycle, including correct navigation through Activity stack, handling of device orientation changes and correct use of lifecycle callback functions for registering/unregistering receivers and listeners, saving/restoring data, etc.
 

@@ -6,7 +6,7 @@ import android.content.Intent;
 
 import com.ibrice.moodr.notifications.NotificationHelper;
 
-public class NotificationReciever extends BroadcastReceiver {
+public class NotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         NotificationHelper notificationHelper = new NotificationHelper(context);

@@ -62,9 +62,10 @@ public class HabitsActivityModel extends AndroidViewModel implements Observable 
     public HabitsItem parseItem(Cursor cursor) {
         HabitsItem item = new HabitsItem();
         item.ID = cursor.getInt(0);
-        item.Title = cursor.getString(1);
-        item.Time = cursor.getString(2);
+        // index 1 is for the date and time the thing was created
+        item.Title = cursor.getString(2);
         item.Description = cursor.getString(3);
+        item.Time = cursor.getString(4);
         return item;
     }
 }

@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import com.ibrice.moodr.R;
 import com.ibrice.moodr.diary.CalendarActivity;
 import com.ibrice.moodr.habits.ViewHabitsActivity;
-import com.ibrice.moodr.notifications.NotificationReciever;
+import com.ibrice.moodr.notifications.NotificationReceiver;
 import com.ibrice.moodr.reports.ReportsActivity;
 import com.ibrice.moodr.settings.SettingsActivity;
 import com.ibrice.moodr.threegoodthings.ThreeGoodThingsActivity;
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }
 
-        Intent intent = new Intent(getApplicationContext(), NotificationReciever.class);
+        Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
         @SuppressLint("UnspecifiedImmutableFlag")
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
                 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);

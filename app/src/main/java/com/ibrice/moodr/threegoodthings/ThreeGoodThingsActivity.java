@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,8 +23,8 @@ public class ThreeGoodThingsActivity extends AppCompatActivity {
     EditText edittxtThing1, edittxtThing2, edittxtThing3;
     TextView txtSubmissionCount;
 
-    private SharedPreferences counter;
-    private int numSubmissions;
+    private SharedPreferences counter; // count up
+    private int numSubmissions; // use to display
 
     private DBManager dbManager;
 
@@ -35,13 +34,14 @@ public class ThreeGoodThingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_good_things);
 
-        txtSubmissionCount = (TextView) findViewById(R.id.txtSubmission);
+        txtSubmissionCount = findViewById(R.id.txtSubmission);
 
         btnSubmit = findViewById(R.id.btnAddTGT);
         edittxtThing1 = findViewById(R.id.edittxtThing1);
         edittxtThing2 = findViewById(R.id.edittxtThing2);
         edittxtThing3 = findViewById(R.id.edittxtThing3);
 
+        // shared prefs stuff
         counter = getApplicationContext().getSharedPreferences("com.ibrice.moodr.threegoodthings.ThreeGoodThingsActivity", Context.MODE_PRIVATE);
         numSubmissions = counter.getInt("submissions", 0);
 
@@ -74,10 +74,11 @@ public class ThreeGoodThingsActivity extends AppCompatActivity {
         });
     }
 
+
+    // increment number of submissions and put it in the SharedPreference
     public void numSubmissions(){
         numSubmissions += 1;
 
-        // update the value of numSubmissions each time its incremented
         counter.edit().putInt("submissions", numSubmissions).apply();
         Log.i("Test: ", Integer.toString(counter.getInt("submissions", numSubmissions)));
     }

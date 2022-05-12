@@ -12,7 +12,7 @@ import com.ibrice.moodr.R;
 
 import androidx.core.app.NotificationCompat;
 
-public class NotificationHelper {
+public class NotificationHelper extends NotificationCompat {
 
     private final Context notificationContext;
     private static final String NOTIFICATION_CHANNEL_ID = "10001";
@@ -23,7 +23,7 @@ public class NotificationHelper {
     }
 
     public void createNotification() {
-        Intent intent = new Intent(notificationContext, NotificationReciever.class);
+        Intent intent = new Intent(notificationContext, NotificationReceiver.class);
 
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -56,7 +56,7 @@ public class NotificationHelper {
         notificationChannel.enableLights(true);
         notificationChannel.setLightColor(androidx.appcompat.R.attr.colorPrimary);
         notificationChannel.enableVibration(true);
-        notificationChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 100});
+        notificationChannel.setVibrationPattern(new long[]{100, 200, 100});
 
         // create notification manager
         assert notificationManager != null;
