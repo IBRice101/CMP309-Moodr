@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         // get notification receiver, pending intent
         Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
         @SuppressLint("UnspecifiedImmutableFlag")
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this,
                 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // get alarm manager for time
