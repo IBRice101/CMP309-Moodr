@@ -55,6 +55,7 @@ public class NotificationHelper extends NotificationCompat {
                 .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
                 .setContentIntent(resultPendingIntent);
 
+        // set importance level
         int importance = NotificationManager.IMPORTANCE_DEFAULT;
 
         // set notification channel behaviour
@@ -72,6 +73,7 @@ public class NotificationHelper extends NotificationCompat {
         notificationBuilder.setChannelId(NOTIFICATION_CHANNEL_ID);
         notificationManager.createNotificationChannel(notificationChannel);
 
+        // send notification
         notificationManager.notify(0, notificationBuilder.build());
     }
 }

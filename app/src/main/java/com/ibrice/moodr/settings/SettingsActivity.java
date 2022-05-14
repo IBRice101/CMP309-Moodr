@@ -1,32 +1,22 @@
 package com.ibrice.moodr.settings;
 
-import android.annotation.SuppressLint;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.widget.Button;
 
 import com.ibrice.moodr.R;
 import com.ibrice.moodr.notifications.NotificationHelper;
-import com.ibrice.moodr.notifications.NotificationReceiver;
 
 import java.util.Objects;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private static boolean notificationsOn = true;
+    public static boolean notificationsOn = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +60,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             // get theme switch preference toggle
             SwitchPreferenceCompat themeSwitch = findPreference("darkTheme");
-            
+
             if (themeSwitch != null) {
 
                 // when switch is toggled

@@ -8,23 +8,22 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.ibrice.moodr.mainscreen.MainActivity;
+import com.ibrice.moodr.settings.SettingsActivity;
 
 public class NotificationReceiver extends BroadcastReceiver {
+    @SuppressLint("UnspecifiedImmutableFlag")
     @Override
     public void onReceive(Context context, Intent intent) {
-        NotificationHelper notificationHelper = new NotificationHelper(context);
-        notificationHelper.createNotification();
+        if (SettingsActivity.notificationsOn) {
+            NotificationHelper notificationHelper = new NotificationHelper(context);
 
-        NotificationManager notificationManager =
-                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            Intent notificationIntent = new Intent(context, MainActivity.class);
+            notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-        Intent notificationIntent = new Intent(context, MainActivity.class);
-        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            PendingIntent.getActivity(context, 0, notificationIntent,
+                    PendingIntent.FLAG_UPDATE_CURRENT);
 
-        @SuppressLint("UnspecifiedImmutableFlag")
-        PendingIntent pendingIntent =
-                PendingIntent.getActivity(context, 0, notificationIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT);
-
+            notificationHelper.createNotification();
+        }
     }
 }
