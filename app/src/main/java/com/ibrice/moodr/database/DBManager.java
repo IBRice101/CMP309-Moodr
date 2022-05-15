@@ -68,7 +68,6 @@ public class DBManager {
         database.insert(DBHelper.HABITS_TABLE_NAME, null, contentValues);
     }
 
-    // TODO: make able to fetch based on timeframe, probably using date
     // fetch diary entries/data from database
     // "Cursor" provides R/W access to db, NOTE: this is where async through threads should be done
     public Cursor fetchDiary(){

@@ -24,8 +24,6 @@ public class ReportsThreeGoodThingsFragment extends Fragment {
         bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
         return fragment;
-
-        // TODO: watch and implement https://www.youtube.com/watch?v=O7noFYLxP14
     }
 
     @Override

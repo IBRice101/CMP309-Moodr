@@ -15,7 +15,6 @@ import com.ibrice.moodr.reports.ui.reportsDiaryFragment.ReportsDiaryFragment;
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
- * TODO: implement data return from SQLite db
  * see https://stackoverflow.com/questions/47954066/displaying-all-data-from-sqlite-database-into-listview-in-tabbed-activity
  */
 

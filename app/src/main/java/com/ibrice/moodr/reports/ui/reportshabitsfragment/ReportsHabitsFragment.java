@@ -1,15 +1,20 @@
 package com.ibrice.moodr.reports.ui.reportsHabitsFragment;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ibrice.moodr.R;
 import com.ibrice.moodr.database.DBManager;
 import com.ibrice.moodr.databinding.FragmentReportsHabitsBinding;
+import com.ibrice.moodr.mainscreen.MainActivity;
 import com.ibrice.moodr.reports.items.HabitsItem;
 
 import java.util.ArrayList;
@@ -49,6 +54,7 @@ public class ReportsHabitsFragment extends Fragment {
 
         DBManager db = new DBManager(getContext());
         db.open();
+
     }
 
     @Override
