@@ -4,6 +4,7 @@ import android.app.Application;
 import android.database.Cursor;
 
 import com.ibrice.moodr.database.DBManager;
+import com.ibrice.moodr.reports.items.HabitsItem;
 
 import java.util.ArrayList;
 import java.util.List;

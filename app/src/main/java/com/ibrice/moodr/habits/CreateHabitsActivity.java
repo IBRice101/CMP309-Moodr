@@ -32,7 +32,8 @@ public class CreateHabitsActivity extends AppCompatActivity {
             int hour = timePicker.getHour();
             int minute = timePicker.getMinute();
 
-            @SuppressLint("DefaultLocale") String timePicked = String.format("%02d", hour) + ":" + String.format("%02d", minute);
+            @SuppressLint("DefaultLocale")
+            String timePicked = String.format("%02d", hour) + ":" + String.format("%02d", minute);
 
             String title = edittxtHabitTitle.getText().toString();
             String description = edittxtHabitDescription.getText().toString();

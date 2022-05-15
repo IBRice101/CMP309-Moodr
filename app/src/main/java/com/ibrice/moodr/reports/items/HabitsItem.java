@@ -1,4 +1,4 @@
-package com.ibrice.moodr.habits;
+package com.ibrice.moodr.reports.items;
 
 public class HabitsItem {
     public int ID;

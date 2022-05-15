@@ -13,7 +13,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ibrice.moodr.R;
 import com.ibrice.moodr.database.DBManager;
 import com.ibrice.moodr.databinding.ActivityViewHabitsBinding;
+import com.ibrice.moodr.reports.items.HabitsItem;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -59,12 +61,12 @@ public class ViewHabitsActivity extends AppCompatActivity {
     }
 
     @BindingAdapter("data")
-    public static void setTestListProperties(RecyclerView view, List<HabitsItem> data){
+    public static void setViewHabitsListproperties(RecyclerView view, List<HabitsItem> data){
         ((HabitsActivityRecyclerAdapter) Objects.requireNonNull(view.getAdapter())).setData(data);
     }
 
     static class HabitsActivityRecyclerAdapter extends RecyclerView.Adapter<HabitsActivityRecyclerAdapter.ViewHolder>{
-        private List<HabitsItem> localDataset;
+        private List<HabitsItem> localDataset = new ArrayList<>();
 
         public HabitsActivityRecyclerAdapter() {
             //empty
