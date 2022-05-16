@@ -11,13 +11,12 @@ import androidx.viewpager.widget.ViewPager;
 
 public class ReportsThreeGoodThingsActivity extends AppCompatActivity {
 
-    private ActivityReportsThreeGoodThingsBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityReportsThreeGoodThingsBinding.inflate(getLayoutInflater());
+        com.ibrice.moodr.databinding.ActivityReportsThreeGoodThingsBinding binding =
+                ActivityReportsThreeGoodThingsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
@@ -26,6 +25,5 @@ public class ReportsThreeGoodThingsActivity extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
 
-        // do stuff here
     }
 }

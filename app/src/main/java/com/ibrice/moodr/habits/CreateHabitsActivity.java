@@ -22,7 +22,7 @@ public class CreateHabitsActivity extends AppCompatActivity {
 
         TimePicker timePicker = findViewById(R.id.timePicker);
 
-        timePicker.setIs24HourView(true);
+        timePicker.setIs24HourView(true); // default is AM/PM, unwieldy
 
         Button btnSubmitHabit = findViewById(R.id.btnSubmitHabit);
         EditText edittxtHabitTitle = findViewById(R.id.edittxtHabitTitle);
@@ -32,12 +32,14 @@ public class CreateHabitsActivity extends AppCompatActivity {
             int hour = timePicker.getHour();
             int minute = timePicker.getMinute();
 
+            // format properly
             @SuppressLint("DefaultLocale")
             String timePicked = String.format("%02d", hour) + ":" + String.format("%02d", minute);
 
             String title = edittxtHabitTitle.getText().toString();
             String description = edittxtHabitDescription.getText().toString();
 
+            // check if fields are empty, else, insert into db
             if (title.isEmpty()) {
                 Toast.makeText(this,
                         "Please enter a title...", Toast.LENGTH_SHORT).show();

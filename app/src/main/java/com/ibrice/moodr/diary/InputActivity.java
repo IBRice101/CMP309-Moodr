@@ -37,31 +37,28 @@ public class InputActivity extends AppCompatActivity {
             mood = "Sad";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
-
         ImageButton imgbtnDown = findViewById(R.id.imgbtnDown);
         imgbtnDown.setOnClickListener(v -> {
             mood = "Down";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
-
         ImageButton imgbtnOkay = findViewById(R.id.imgbtnOkay);
         imgbtnOkay.setOnClickListener(v -> {
             mood = "Okay";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
-
         ImageButton imgbtnGood = findViewById(R.id.imgbtnGood);
         imgbtnGood.setOnClickListener(v -> {
             mood = "Good";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
-
         ImageButton imgbtnHappy = findViewById(R.id.imgbtnHappy);
         imgbtnHappy.setOnClickListener(v -> {
             mood = "Happy";
             Toast.makeText(this, "You're feeling " + mood, Toast.LENGTH_SHORT).show();
         });
 
+        // submit to database
         btnSubmitDiary.setOnClickListener(v -> {
             String title = edittxtTitle.getText().toString();
             String entry = edittxtDiary.getText().toString();

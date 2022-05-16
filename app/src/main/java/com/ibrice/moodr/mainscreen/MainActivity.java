@@ -64,13 +64,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(settingsIntent);
         });
 
-        // notification stuff
-        // set time
+        // set time for notification to go off
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 17); // set to be at 5 PM
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
 
+        // if current date is different to last recoded date, increment the date
         if (calendar.getTime().compareTo(new Date()) < 0) {
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }

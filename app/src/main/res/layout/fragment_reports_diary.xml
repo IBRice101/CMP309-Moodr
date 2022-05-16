@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".reports.ui.reportsDiaryFragment.ReportsDiaryFragment">
 
+    <!-- grab data from ViewModel (where fetch function is called in a thread) -->
     <data>
         <variable
             name="viewmodelReportDiary"
             type="com.ibrice.moodr.reports.ui.reportsDiaryFragment.PageViewModel" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

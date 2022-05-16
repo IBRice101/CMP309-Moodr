@@ -15,7 +15,8 @@ public class ReportsDiaryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        com.ibrice.moodr.databinding.ActivityReportsDiaryBinding binding = ActivityReportsDiaryBinding.inflate(getLayoutInflater());
+        com.ibrice.moodr.databinding.ActivityReportsDiaryBinding binding =
+                ActivityReportsDiaryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
@@ -24,6 +25,5 @@ public class ReportsDiaryActivity extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
 
-        // do stuff here
     }
 }

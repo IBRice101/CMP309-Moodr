@@ -37,6 +37,7 @@ public class ViewHabitsActivity extends AppCompatActivity {
 
     DBManager db = new DBManager(ViewHabitsActivity.this);
 
+    // define elements in here
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +65,7 @@ public class ViewHabitsActivity extends AppCompatActivity {
 
     }
 
+    // get data from corresponding XML page and bind to this view
     @BindingAdapter("data")
     public static void setViewHabitsListProperties(RecyclerView view, List<HabitsItem> data){
         ((HabitsActivityRecyclerAdapter) Objects.requireNonNull(view.getAdapter())).setData(data);
@@ -82,6 +84,7 @@ public class ViewHabitsActivity extends AppCompatActivity {
             notifyDataSetChanged();
         }
 
+        // get and set the relevant views
         public class ViewHolder extends RecyclerView.ViewHolder {
             private final TextView habitsID;
             private final TextView habitsTitle;
@@ -113,7 +116,7 @@ public class ViewHabitsActivity extends AppCompatActivity {
         }
 
         @NonNull
-        @Override
+        @Override // put layout in a ViewHolder element
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_view_habits_text, parent, false);
             return new ViewHolder(view);
@@ -127,6 +130,7 @@ public class ViewHabitsActivity extends AppCompatActivity {
             viewHolder.getHabitsDesc().setText(localDataset.get(position).Description);
             viewHolder.getHabitsTime().setText(localDataset.get(position).Time);
 
+            // delete items from the list on click via a dialog/alert
             viewHolder.itemView.setOnClickListener(v -> {
                 db.open();
                 HabitsItem currentItem = localDataset.get(position);

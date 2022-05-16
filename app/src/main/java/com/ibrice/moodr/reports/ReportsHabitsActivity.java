@@ -11,13 +11,12 @@ import androidx.viewpager.widget.ViewPager;
 
 public class ReportsHabitsActivity extends AppCompatActivity {
 
-    private ActivityReportsHabitsBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityReportsHabitsBinding.inflate(getLayoutInflater());
+        com.ibrice.moodr.databinding.ActivityReportsHabitsBinding binding =
+                ActivityReportsHabitsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
@@ -26,6 +25,5 @@ public class ReportsHabitsActivity extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
 
-        // do stuff here
     }
 }

@@ -44,8 +44,10 @@ public class SettingsActivity extends AppCompatActivity {
             // activity set in root_prefs
             setPreferencesFromResource(R.xml.root_prefs, rootKey);
 
+            // get notification preference toggle
             SwitchPreferenceCompat notificationSwitch = findPreference("notificationsToggle");
 
+            // if notification switch is off, no notifications for the user
             if (notificationSwitch != null) {
                 notificationSwitch.setOnPreferenceChangeListener((preference, newValue) -> {
                     boolean isChecked = true;

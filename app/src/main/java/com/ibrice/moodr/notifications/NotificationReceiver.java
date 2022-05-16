@@ -17,6 +17,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         if (SettingsActivity.notificationsOn) {
             NotificationHelper notificationHelper = new NotificationHelper(context);
 
+            // spawn notification in MainActivity (where timer is)
             Intent notificationIntent = new Intent(context, MainActivity.class);
             notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 

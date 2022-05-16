@@ -19,6 +19,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // display the logo on black background for 1 second on startup
         new Handler().postDelayed(() -> {
             Intent splashIntent = new Intent(SplashScreen.this, MainActivity.class);
             startActivity(splashIntent);
