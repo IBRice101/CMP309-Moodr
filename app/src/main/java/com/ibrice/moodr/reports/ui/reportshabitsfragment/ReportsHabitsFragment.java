@@ -3,7 +3,6 @@ package com.ibrice.moodr.reports.ui.reportsHabitsFragment;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +53,6 @@ public class ReportsHabitsFragment extends Fragment {
 
         DBManager db = new DBManager(getContext());
         db.open();
-
     }
 
     @Override
@@ -76,7 +74,7 @@ public class ReportsHabitsFragment extends Fragment {
         }
     }
 
-    static class ReportsHabitsFragmentRecyclerAdapter extends RecyclerView.Adapter<ReportsHabitsFragmentRecyclerAdapter.ViewHolder>{
+    class ReportsHabitsFragmentRecyclerAdapter extends RecyclerView.Adapter<ReportsHabitsFragmentRecyclerAdapter.ViewHolder>{
         private List<HabitsItem> localDataset = new ArrayList<>();
 
         public ReportsHabitsFragmentRecyclerAdapter() {
@@ -89,7 +87,7 @@ public class ReportsHabitsFragment extends Fragment {
             notifyDataSetChanged();
         }
 
-        public static class ViewHolder extends RecyclerView.ViewHolder {
+        public class ViewHolder extends RecyclerView.ViewHolder {
             private final TextView habitsID;
             private final TextView habitsTitle;
             private final TextView habitsDesc;
@@ -134,6 +132,29 @@ public class ReportsHabitsFragment extends Fragment {
                 viewHolder.getHabitsTitle().setText(localDataset.get(position).Title);
                 viewHolder.getHabitsDesc().setText(localDataset.get(position).Description);
                 viewHolder.getHabitsTime().setText(localDataset.get(position).Time);
+
+                viewHolder.itemView.setOnClickListener(v -> {
+                    DBManager db = new DBManager(getContext());
+                    db.open();
+                    HabitsItem currentItem = localDataset.get(position);
+
+                    AlertDialog.Builder alert = new AlertDialog.Builder(v.getContext());
+                    alert.setTitle("Delete Habit?");
+                    alert.setMessage("Are you sure you want to delete this habit?");
+
+                    alert.setPositiveButton("Yes", (dialog, which) -> {
+                        db.deleteHabits(currentItem.ID, false);
+
+                        Toast.makeText(v.getContext(), "Habit deleted", Toast.LENGTH_SHORT).show();
+
+                        Intent homeIntent = new Intent(v.getContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(homeIntent);
+                    });
+
+                    alert.setNegativeButton("No", (dialog, which) -> dialog.cancel());
+
+                    alert.show();
+                });
             }
         }
 
