@@ -46,7 +46,7 @@ public class ThreeGoodThingsActivity extends AppCompatActivity {
         numSubmissions = counter.getInt("submissions", 0);
 
         if (numSubmissions != 0) {
-            txtSubmissionCount.setText("Submissions: " + (numSubmissions + 8));
+            txtSubmissionCount.setText("Submissions: " + (numSubmissions));
         }
 
         btnSubmit.setOnClickListener(v -> {
