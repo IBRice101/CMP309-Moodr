@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.ibrice.moodr.R;
 import com.ibrice.moodr.database.DBManager;
 import com.ibrice.moodr.databinding.FragmentReportsHabitsBinding;
-import com.ibrice.moodr.mainscreen.MainActivity;
+import com.ibrice.moodr.reports.ReportsActivity;
 import com.ibrice.moodr.reports.items.HabitsItem;
 
 import java.util.ArrayList;
@@ -147,8 +147,8 @@ public class ReportsHabitsFragment extends Fragment {
 
                         Toast.makeText(v.getContext(), "Habit deleted", Toast.LENGTH_SHORT).show();
 
-                        Intent homeIntent = new Intent(v.getContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(homeIntent);
+                        Intent reportsIntent = new Intent(v.getContext(), ReportsActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(reportsIntent);
                     });
 
                     alert.setNegativeButton("No", (dialog, which) -> dialog.cancel());
