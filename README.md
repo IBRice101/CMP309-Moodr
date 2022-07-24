@@ -82,13 +82,17 @@ The use of SQLite satisfies this requirement
 
 Sending the user a notification will satisfy this.
 
-## App Hierarchy
+## Package Structure
 
-\[Insert Image Here\]
+![The Package Structure of my application](media/PackageStructure.png)
 
-## Other stuff
+## Flow Chart
 
-\[Insert as and when required\]
+![A flow chart describing the user experience of the app](media/FlowChart.png)
+
+## Usage Demo
+
+A link to the demonstration of the app can be found [here](https://youtu.be/2C-dJKbjT4I), this demo shows how the app is used in its entirety
 
 ## References
 
